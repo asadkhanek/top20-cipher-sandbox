@@ -1,0 +1,117 @@
+{
+  "id": "ecc",
+  "name": "ECC",
+  "category": "asymmetric",
+  "type": "elliptic_curve",
+  "keySize": "256/384/521-bit",
+  "blockSize": "Variable",
+  "designer": "Neal Koblitz, Victor S. Miller",
+  "publishedYear": 1985,
+  "standardization": "NIST FIPS 186, SEC, ANSI X9.62",
+  "description": "Elliptic Curve Cryptography (ECC) is an approach to public-key cryptography based on the algebraic structure of elliptic curves over finite fields. ECC provides the same level of security as RSA with significantly smaller key sizes.",
+  "history": "ECC was independently proposed by Neal Koblitz and Victor Miller in 1985. It has become increasingly popular due to its efficiency and strong security properties, especially in mobile and embedded systems.",
+  "features": [
+    "Smaller key sizes than RSA for equivalent security",
+    "Fast key generation and digital signatures",
+    "Efficient in bandwidth and storage",
+    "Strong mathematical foundation",
+    "Various standardized curves"
+  ],
+  "advantages": [
+    "Much smaller key sizes (256-bit ECC ≈ 3072-bit RSA)",
+    "Lower computational overhead",
+    "Faster key generation",
+    "Less bandwidth and storage requirements",
+    "Better performance on mobile devices"
+  ],
+  "disadvantages": [
+    "More complex mathematics",
+    "Patent issues in some implementations",
+    "Potential for implementation vulnerabilities",
+    "Not as widely supported as RSA historically"
+  ],
+  "securityLevel": "Very High",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Elliptic curve discrete logarithm problem",
+      "Invalid curve attacks",
+      "Side-channel attacks",
+      "Twist attacks"
+    ],
+    "bestAttack": "Exponential time for ECDLP",
+    "securityMargin": "Very high - no known polynomial-time attacks"
+  },
+  "useCases": [
+    "TLS/SSL certificates",
+    "Cryptocurrency (Bitcoin, Ethereum)",
+    "Mobile device encryption",
+    "IoT device security",
+    "Digital signatures",
+    "Key exchange protocols"
+  ],
+  "variants": [
+    {
+      "name": "secp256k1",
+      "keySize": 256,
+      "description": "Bitcoin and cryptocurrency standard"
+    },
+    {
+      "name": "secp256r1 (P-256)",
+      "keySize": 256,
+      "description": "NIST standard, widely used in TLS"
+    },
+    {
+      "name": "secp384r1 (P-384)",
+      "keySize": 384,
+      "description": "Higher security NIST curve"
+    },
+    {
+      "name": "secp521r1 (P-521)",
+      "keySize": 521,
+      "description": "Highest security NIST curve"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECIES",
+      "description": "Elliptic Curve Integrated Encryption Scheme",
+      "ivRequired": false
+    },
+    {
+      "name": "ECDH",
+      "description": "Elliptic Curve Diffie-Hellman key exchange",
+      "ivRequired": false
+    },
+    {
+      "name": "ECDSA",
+      "description": "Elliptic Curve Digital Signature Algorithm",
+      "ivRequired": false
+    }
+  ],
+  "implementation": {
+    "complexity": "High",
+    "performance": "Good",
+    "memoryRequirement": "Low",
+    "hardwareEfficiency": "Good"
+  },
+  "standards": [
+    "NIST FIPS 186-4",
+    "ANSI X9.62",
+    "SEC 1 and SEC 2",
+    "RFC 3278 (TLS)",
+    "IEEE 1363"
+  ],
+  "references": [
+    {
+      "title": "Elliptic curve cryptosystems",
+      "authors": "Neal Koblitz",
+      "journal": "Mathematics of Computation",
+      "year": 1987
+    },
+    {
+      "title": "Uses of elliptic curves in cryptography",
+      "authors": "Victor S. Miller",
+      "conference": "CRYPTO 1985"
+    }
+  ]
+}

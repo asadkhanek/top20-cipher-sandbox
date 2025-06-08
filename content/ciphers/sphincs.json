@@ -1,0 +1,158 @@
+{
+  "id": "sphincs",
+  "name": "SPHINCS+",
+  "fullName": "SPHINCS+ Hash-Based Signatures",
+  "type": "asymmetric",
+  "category": "Post-Quantum Digital Signature",
+  "description": "SPHINCS+ is a stateless hash-based signature scheme providing post-quantum security. It offers security based solely on the properties of cryptographic hash functions, making it resistant to quantum computer attacks.",
+  "keyLengths": [128, 192, 256],
+  "blockSize": 64,
+  "rounds": "Variable",
+  "modes": ["Sign", "Verify"],
+  "strength": "Post-Quantum",
+  "status": "NIST Standard",
+  "standardization": [
+    "NIST PQC Standard (2022)",
+    "FIPS 205 (Draft)",
+    "RFC 8391 (XMSS specification)"
+  ],
+  "yearIntroduced": 2015,
+  "inventors": [
+    "Daniel J. Bernstein",
+    "Daira Hopwood",
+    "Andreas Hülsing",
+    "Tanja Lange",
+    "Ruben Niederhagen",
+    "Louiza Papachristodoulou",
+    "Michael Schneider",
+    "Peter Schwabe",
+    "Zooko Wilcox-O'Hearn"
+  ],
+  "characteristics": {
+    "structure": "Hash-based signature scheme",
+    "security": "Based on cryptographic hash function security",
+    "statefulness": "Stateless (unlike XMSS)",
+    "components": ["FORS (Forest of Random Subsets)", "WOTS+ (Winternitz OTS)", "Hypertree"],
+    "variants": ["SPHINCS+-128s/f", "SPHINCS+-192s/f", "SPHINCS+-256s/f"]
+  },
+  "applications": [
+    "Post-quantum digital signatures",
+    "Long-term document signing",
+    "Code signing for quantum-resistant software",
+    "Certificate authorities",
+    "Blockchain and cryptocurrency",
+    "Government and military communications"
+  ],
+  "advantages": [
+    "Quantum computer resistant",
+    "NIST standardized",
+    "Stateless operation",
+    "Conservative security assumptions",
+    "Only requires secure hash functions",
+    "Well-understood security model"
+  ],
+  "disadvantages": [
+    "Very large signature sizes",
+    "Slower signing and verification",
+    "Large public key sizes",
+    "High computational overhead",
+    "Memory requirements for implementation"
+  ],
+  "security": {
+    "quantumResistance": "Based on hash function security",
+    "classicalSecurity": "Provably secure under hash function assumptions",
+    "securityLevels": {
+      "SPHINCS+-128": "Security level 1 (equivalent to AES-128)",
+      "SPHINCS+-192": "Security level 3 (equivalent to AES-192)",
+      "SPHINCS+-256": "Security level 5 (equivalent to AES-256)"
+    },
+    "assumptions": "Security of underlying hash function (SHA-2)",
+    "reductions": "Security reduces to second-preimage resistance",
+    "confidence": "Very high - based on well-studied hash functions"
+  },
+  "performance": {
+    "keyGeneration": "Fast",
+    "signing": "Slow (many hash operations)",
+    "verification": "Slow (many hash operations)",
+    "signatureSizes": {
+      "SPHINCS+-128s": "7,856 bytes",
+      "SPHINCS+-128f": "17,088 bytes",
+      "SPHINCS+-192s": "16,224 bytes",
+      "SPHINCS+-192f": "35,664 bytes",
+      "SPHINCS+-256s": "29,792 bytes",
+      "SPHINCS+-256f": "49,856 bytes"
+    },
+    "publicKeySizes": {
+      "SPHINCS+-128": "32 bytes",
+      "SPHINCS+-192": "48 bytes",
+      "SPHINCS+-256": "64 bytes"
+    },
+    "privateKeySizes": {
+      "SPHINCS+-128": "64 bytes",
+      "SPHINCS+-192": "96 bytes",
+      "SPHINCS+-256": "128 bytes"
+    }
+  },
+  "usage": {
+    "currentStatus": "NIST standardized, early deployment",
+    "recommendedFor": [
+      "Long-term digital signatures",
+      "High-security applications",
+      "Post-quantum migration",
+      "Certificate signing",
+      "Code signing",
+      "Document authenticity"
+    ],
+    "notRecommendedFor": [
+      "Real-time applications",
+      "Bandwidth-constrained environments",
+      "High-frequency signing operations",
+      "Mobile applications with limited resources"
+    ]
+  },
+  "implementation": {
+    "complexity": "High",
+    "considerations": [
+      "Careful parameter selection",
+      "Efficient hash function implementation",
+      "Memory management for large signatures",
+      "Side-channel attack protection",
+      "Proper randomness generation"
+    ],
+    "optimizations": [
+      "Fast vs. small variants (f vs. s)",
+      "Multi-threading for hash operations",
+      "Hardware acceleration for hashing",
+      "Memory optimization techniques"
+    ]
+  },
+  "related": {
+    "family": "Hash-based signatures",
+    "similar": ["XMSS", "LMS", "Merkle signatures"],
+    "predecessors": ["SPHINCS (original)", "Lamport signatures"],
+    "alternatives": ["Dilithium", "Falcon", "Rainbow"],
+    "complements": ["Post-quantum KEM schemes", "Kyber"]
+  },
+  "references": [
+    "NIST PQC Standardization Process",
+    "SPHINCS+ specification",
+    "FIPS 205 Draft Standard",
+    "RFC 8391 - XMSS specification",
+    "Original SPHINCS+ paper (2019)"
+  ],
+  "cryptanalysis": {
+    "securityModel": "EUF-CMA secure under hash function security",
+    "bestAttacks": "No practical attacks on full scheme",
+    "analysisStatus": "Extensively analyzed during NIST process",
+    "assumptions": "Second-preimage resistance of hash functions",
+    "confidence": "Very high - conservative security model"
+  },
+  "variants": {
+    "SPHINCS+-128s": "Small signatures, slower operations",
+    "SPHINCS+-128f": "Fast operations, larger signatures",
+    "SPHINCS+-192s": "Medium security, small signatures",
+    "SPHINCS+-192f": "Medium security, fast operations",
+    "SPHINCS+-256s": "High security, small signatures",
+    "SPHINCS+-256f": "High security, fast operations"
+  }
+}

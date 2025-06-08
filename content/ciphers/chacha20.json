@@ -1,0 +1,36 @@
+{
+  "id": "chacha20",
+  "name": "ChaCha20",
+  "category": "symmetric",
+  "variants": [
+    { "id": "chacha20", "name": "ChaCha20", "keySize": 32 }
+  ],
+  "modes": ["Stream"],
+  "description": "ChaCha20 is a stream cipher developed by Daniel J. Bernstein. It's designed to be faster than AES in software-only implementations while providing similar security.",
+  "keyRequirements": {
+    "minKeySize": 32,
+    "maxKeySize": 32,
+    "keySizes": [32]
+  },
+  "ivRequired": false,
+  "nonceRequired": true,
+  "nonceSize": 12,
+  "securityNotes": [
+    {
+      "level": "info",
+      "message": "ChaCha20 is considered very secure and is used in modern protocols like TLS 1.3."
+    },
+    {
+      "level": "warning",
+      "message": "Never reuse the same nonce with the same key."
+    }
+  ],
+  "references": [
+    {
+      "title": "RFC 8439 - ChaCha20 and Poly1305 for IETF Protocols",
+      "url": "https://tools.ietf.org/html/rfc8439"
+    }
+  ],
+  "complexity": "low",
+  "performance": "fast"
+}

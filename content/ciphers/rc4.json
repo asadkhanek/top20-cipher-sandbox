@@ -1,0 +1,96 @@
+{
+  "id": "rc4",
+  "name": "RC4",
+  "category": "symmetric",
+  "variants": [
+    {
+      "id": "rc4-40",
+      "name": "RC4-40",
+      "keySize": 40
+    },
+    {
+      "id": "rc4-64",
+      "name": "RC4-64",
+      "keySize": 64
+    },
+    {
+      "id": "rc4-128",
+      "name": "RC4-128",
+      "keySize": 128
+    },
+    {
+      "id": "rc4-256",
+      "name": "RC4-256",
+      "keySize": 256
+    }
+  ],
+  "modes": ["Stream"],
+  "description": "RC4 (Rivest Cipher 4) is a stream cipher designed by Ron Rivest in 1987. Once widely used in protocols like SSL/TLS and WEP, RC4 is now considered cryptographically broken and insecure.",
+  "keyRequirements": {
+    "minKeySize": 40,
+    "maxKeySize": 2048,
+    "keySizes": [40, 64, 128, 256]
+  },
+  "ivRequired": false,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "danger",
+      "message": "RC4 is cryptographically broken and should not be used for secure applications"
+    },
+    {
+      "level": "warning",
+      "message": "RC4 has known biases and vulnerabilities, including key collisions and statistical weaknesses"
+    },
+    {
+      "level": "info",
+      "message": "RC4 was prohibited in all TLS versions by RFC 7465 in 2015"
+    }
+  ],
+  "references": [
+    {
+      "title": "RFC 7465 - Prohibiting RC4 Cipher Suites",
+      "url": "https://tools.ietf.org/html/rfc7465"
+    },
+    {
+      "title": "RC4 - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/RC4"
+    }
+  ],
+  "complexity": "low",
+  "performance": "fast",
+  "specifications": {
+    "blockSize": "N/A (stream cipher)",
+    "keySize": "40-2048 bits (variable)",
+    "rounds": "N/A (stream cipher)",
+    "structure": "Stream cipher with internal state",
+    "designer": "Ron Rivest",
+    "yearPublished": 1987,
+    "patentStatus": "Trade secret until 1994, now public domain"
+  },
+  "technicalDetails": {
+    "algorithm": "Pseudorandom generation algorithm (PRGA) with key-scheduling algorithm (KSA)",
+    "state": "256-byte internal state array",
+    "keystream": "Generates one byte of keystream per iteration",
+    "operation": "XOR keystream with plaintext for encryption/decryption"
+  },
+  "useCases": [
+    "Educational purposes to understand stream ciphers",
+    "Historical analysis of cryptographic protocols",
+    "Legacy system analysis (not for new implementations)"
+  ],
+  "limitations": [
+    "Cryptographically broken with multiple known attacks",
+    "Biased keystream output",
+    "Vulnerable to key collision attacks",
+    "Weak key scheduling algorithm",
+    "Related key attacks possible"
+  ],
+  "attacks": [
+    "Fluhrer, Mantin and Shamir attack (2001)",
+    "Klein's attack (2005)",
+    "Combinatorial attack (2006)",
+    "RC4 bias attacks",
+    "NOMORE attack (2015)"
+  ]
+}

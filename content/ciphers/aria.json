@@ -1,0 +1,112 @@
+{
+  "id": "aria",
+  "name": "ARIA",
+  "fullName": "Academy, Research Institute, Agency",
+  "type": "symmetric",
+  "category": "Block Cipher",
+  "description": "ARIA is a block cipher developed by South Korean cryptographers and adopted as a Korean national standard. It features a substitution-permutation network structure similar to AES but with different S-boxes and key schedules.",
+  "keyLengths": [128, 192, 256],
+  "blockSize": 128,
+  "rounds": {
+    "128": 12,
+    "192": 14,
+    "256": 16
+  },
+  "modes": ["ECB", "CBC", "CTR"],
+  "strength": "High",
+  "status": "Active",
+  "standardization": [
+    "KS X 1213-1:2009 (Korean National Standard)",
+    "RFC 5794 (Informational)",
+    "ISO/IEC 18033-3:2010"
+  ],
+  "yearIntroduced": 2003,
+  "inventors": ["Korea Information Security Agency (KISA)"],
+  "characteristics": {
+    "structure": "Substitution-Permutation Network (SPN)",
+    "sBoxes": "Two 8×8 S-boxes (S1 and S2)",
+    "rounds": "Variable (12, 14, or 16 rounds)",
+    "keySchedule": "Non-linear key expansion with round constants",
+    "operations": ["Substitution", "Shift", "Diffusion", "Key Addition"]
+  },
+  "applications": [
+    "Korean government communications",
+    "Secure communications in South Korea",
+    "Banking and financial systems",
+    "VPN implementations",
+    "Embedded systems"
+  ],
+  "advantages": [
+    "Strong security design",
+    "Efficient implementation",
+    "Government-approved in South Korea",
+    "Good performance on various platforms",
+    "Similar security level to AES"
+  ],
+  "disadvantages": [
+    "Less widespread adoption than AES",
+    "Limited third-party analysis compared to AES",
+    "Regional preference over global standard",
+    "Fewer optimized implementations available"
+  ],
+  "security": {
+    "knownAttacks": [
+      "Differential cryptanalysis (partial rounds)",
+      "Linear cryptanalysis (reduced rounds)",
+      "Impossible differential attacks",
+      "Boomerang attacks (reduced rounds)"
+    ],
+    "resistance": "Strong against known cryptanalytic attacks",
+    "recommendations": "Suitable for high-security applications",
+    "vulnerabilities": "No practical vulnerabilities in full-round ARIA"
+  },
+  "performance": {
+    "software": "Good performance on general-purpose processors",
+    "hardware": "Efficient hardware implementations possible",
+    "memory": "Moderate memory requirements",
+    "notes": "Performance comparable to AES in most scenarios"
+  },
+  "usage": {
+    "currentStatus": "Active use in South Korea",
+    "recommendedFor": [
+      "Korean government applications",
+      "Regional secure communications",
+      "Systems requiring Korean standard compliance",
+      "Alternative to AES in specific contexts"
+    ],
+    "notRecommendedFor": [
+      "Applications requiring global interoperability",
+      "Systems with strict AES requirements",
+      "Legacy system integration"
+    ]
+  },
+  "implementation": {
+    "complexity": "Moderate",
+    "considerations": [
+      "Proper S-box implementation",
+      "Correct key schedule implementation",
+      "Side-channel attack protection",
+      "Constant-time implementation"
+    ],
+    "testing": "Test vectors available in KS X 1213-1 standard"
+  },
+  "related": {
+    "similar": ["AES", "Camellia", "SEED"],
+    "successors": [],
+    "predecessors": [],
+    "alternatives": ["AES-128", "AES-192", "AES-256", "Camellia"]
+  },
+  "references": [
+    "KS X 1213-1:2009 - Korean national standard for ARIA",
+    "RFC 5794 - A Description of the ARIA Encryption Algorithm",
+    "ISO/IEC 18033-3:2010 - Encryption algorithms",
+    "ARIA specification by KISA",
+    "Cryptanalysis papers on ARIA algorithm"
+  ],
+  "cryptanalysis": {
+    "bestAttack": "Boomerang attack on 6-round ARIA-192/256",
+    "fullRoundSecurity": "No practical attacks on full-round ARIA",
+    "securityMargin": "Good security margin with full rounds",
+    "analysisStatus": "Moderate analysis compared to AES"
+  }
+}

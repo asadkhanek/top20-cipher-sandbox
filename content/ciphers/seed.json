@@ -1,0 +1,75 @@
+{
+  "id": "seed",
+  "name": "SEED",
+  "description": "Korean standard 128-bit block cipher developed by KISA",
+  "category": "symmetric",
+  "variants": [
+    {
+      "id": "seed-128",
+      "name": "SEED-128",
+      "keySize": 16
+    }
+  ],
+  "modes": ["ECB", "CBC"],
+  "keyRequirements": {
+    "minKeySize": 16,
+    "maxKeySize": 16,
+    "keySizes": [16]
+  },
+  "ivRequired": true,
+  "ivSize": 16,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "info",
+      "message": "Korean national standard (KS X 1213) approved for government use in South Korea"
+    },
+    {
+      "level": "warning", 
+      "message": "Limited adoption outside Korea and less cryptanalysis than AES"
+    }
+  ],
+  "references": [
+    {
+      "title": "SEED Block Cipher - Korean Standard",
+      "url": "https://tools.ietf.org/rfc/rfc4269.txt"
+    },
+    {
+      "title": "KS X 1213 Korean Standard",
+      "url": "https://seed.kisa.or.kr/"
+    }
+  ],
+  "complexity": "medium",
+  "performance": "medium",
+  "specifications": {
+    "blockSize": 128,
+    "keySize": [128],
+    "rounds": 16,
+    "structure": "Feistel Network",
+    "yearIntroduced": 2005,
+    "inventor": "Korea Internet & Security Agency (KISA)",
+    "standardization": [
+      "KS X 1213 (Korean Standard)",
+      "RFC 4269"
+    ]
+  },
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Differential cryptanalysis (theoretical)",
+      "Linear cryptanalysis (theoretical)"
+    ],
+    "bestAttack": "No practical attacks known",
+    "securityMargin": "Good - designed with resistance to known attacks"
+  },
+  "usage": {
+    "applications": [
+      "Korean government communications",
+      "Banking systems in South Korea",
+      "Electronic commerce in Korea"
+    ],
+    "notRecommendedFor": [
+      "New international applications",
+      "Applications requiring wide library support"
+    ]
+  }
+}

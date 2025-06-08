@@ -1,0 +1,104 @@
+{
+  "id": "idea",
+  "name": "IDEA",
+  "category": "symmetric",
+  "type": "block",
+  "keySize": "128-bit",
+  "blockSize": "64-bit",
+  "rounds": "8.5 rounds",
+  "designer": "Xuejia Lai, James Massey",
+  "publishedYear": 1991,
+  "standardization": "Patented until 2012",
+  "description": "International Data Encryption Algorithm (IDEA) is a symmetric key block cipher designed to replace DES. It was used in early versions of PGP and offers strong security with a unique design using mixed operations.",
+  "history": "IDEA was developed by Xuejia Lai and James Massey at ETH Zurich in 1991 as a replacement for DES. It became famous for its use in Pretty Good Privacy (PGP) software and remained patented until 2012.",
+  "features": [
+    "128-bit key length",
+    "64-bit block size",
+    "8.5 rounds",
+    "Mixed operations (XOR, addition mod 2^16, multiplication mod 2^16+1)",
+    "Strong mathematical foundation"
+  ],
+  "advantages": [
+    "Strong security design",
+    "Resistant to differential and linear cryptanalysis",
+    "Simple and elegant structure",
+    "Good performance in software",
+    "Patent-free since 2012"
+  ],
+  "disadvantages": [
+    "64-bit block size vulnerable to birthday attacks",
+    "Was patented (limiting adoption)",
+    "Superseded by AES for new applications",
+    "Limited modern implementations"
+  ],
+  "securityLevel": "High",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Weak key classes (very rare)",
+      "Birthday attacks due to 64-bit blocks",
+      "Some theoretical attacks on reduced rounds"
+    ],
+    "bestAttack": "No practical attacks on full IDEA",
+    "securityMargin": "High - very secure against known attacks"
+  },
+  "useCases": [
+    "Legacy PGP systems",
+    "Educational cryptography",
+    "Historical analysis",
+    "Small data encryption",
+    "Academic research"
+  ],
+  "variants": [
+    {
+      "name": "IDEA",
+      "keySize": 128,
+      "description": "Standard IDEA with 128-bit key"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECB",
+      "description": "Electronic Codebook - simplest but least secure",
+      "ivRequired": false
+    },
+    {
+      "name": "CBC",
+      "description": "Cipher Block Chaining - most common secure mode",
+      "ivRequired": true
+    },
+    {
+      "name": "CFB",
+      "description": "Cipher Feedback - stream cipher mode",
+      "ivRequired": true
+    },
+    {
+      "name": "OFB",
+      "description": "Output Feedback - synchronous stream cipher",
+      "ivRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "Medium",
+    "performance": "Good",
+    "memoryRequirement": "Low",
+    "hardwareEfficiency": "Moderate"
+  },
+  "standards": [
+    "Used in PGP",
+    "ISO/IEC 18033-3 (informative)",
+    "Patent-free since 2012"
+  ],
+  "references": [
+    {
+      "title": "On the Design and Security of Block Ciphers",
+      "authors": "Xuejia Lai",
+      "year": 1992,
+      "note": "PhD Thesis describing IDEA"
+    },
+    {
+      "title": "A Proposal for a New Block Encryption Standard",
+      "authors": "Xuejia Lai, James Massey",
+      "conference": "EUROCRYPT 1990"
+    }
+  ]
+}

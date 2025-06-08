@@ -1,0 +1,92 @@
+{
+  "id": "twofish",
+  "name": "Twofish",
+  "category": "symmetric",
+  "variants": [
+    {
+      "id": "twofish-128",
+      "name": "Twofish-128",
+      "keySize": 128
+    },
+    {
+      "id": "twofish-192",
+      "name": "Twofish-192",
+      "keySize": 192
+    },
+    {
+      "id": "twofish-256",
+      "name": "Twofish-256",
+      "keySize": 256
+    }
+  ],
+  "modes": ["ECB", "CBC", "CFB", "OFB", "CTR"],
+  "description": "Twofish is a symmetric block cipher designed by Bruce Schneier and others. It was one of the five finalist algorithms in the AES competition. Twofish is considered secure and is available under a royalty-free license.",
+  "keyRequirements": {
+    "minKeySize": 128,
+    "maxKeySize": 256,
+    "keySizes": [128, 192, 256]
+  },
+  "ivRequired": true,
+  "ivSize": 16,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "info",
+      "message": "Twofish was a finalist in the AES competition and is considered cryptographically secure"
+    },
+    {
+      "level": "info",
+      "message": "Twofish is royalty-free and unpatented, making it freely available for use"
+    },
+    {
+      "level": "info",
+      "message": "No significant cryptanalytic attacks against Twofish have been published"
+    }
+  ],
+  "references": [
+    {
+      "title": "Twofish: A 128-Bit Block Cipher - Bruce Schneier",
+      "url": "https://www.schneier.com/academic/twofish/"
+    },
+    {
+      "title": "Twofish - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Twofish"
+    }
+  ],
+  "complexity": "high",
+  "performance": "medium",
+  "specifications": {
+    "blockSize": 128,
+    "keySize": "128, 192, or 256 bits",
+    "rounds": 16,
+    "structure": "Feistel network",
+    "designer": "Bruce Schneier, John Kelsey, Doug Whiting, David Wagner, Chris Hall, Niels Ferguson",
+    "yearPublished": 1998,
+    "patentStatus": "Unpatented and royalty-free"
+  },
+  "technicalDetails": {
+    "algorithm": "Feistel network with 16 rounds and key-dependent S-boxes",
+    "keySchedule": "Complex key schedule producing 40 32-bit subkeys",
+    "sBoxes": "Four key-dependent 8×8-bit S-boxes",
+    "mds": "Maximum Distance Separable (MDS) matrix for diffusion"
+  },
+  "useCases": [
+    "High-security applications requiring AES alternatives",
+    "Systems where patent-free algorithms are required",
+    "Cryptographic research and education",
+    "Applications requiring strong encryption with flexible key sizes"
+  ],
+  "limitations": [
+    "More complex implementation than AES",
+    "Slower than AES on most modern processors",
+    "Less widely adopted than AES",
+    "Limited hardware acceleration support compared to AES"
+  ],
+  "advantages": [
+    "Strong security with no known practical attacks",
+    "Royalty-free and unpatented",
+    "Flexible key sizes (128, 192, 256 bits)",
+    "Well-studied and analyzed algorithm",
+    "Conservative security margin"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "3des",
+  "name": "3DES",
+  "category": "symmetric",
+  "variants": [
+    {
+      "id": "3des-112",
+      "name": "3DES-112 (2-key)",
+      "keySize": 112
+    },
+    {
+      "id": "3des-168",
+      "name": "3DES-168 (3-key)",
+      "keySize": 168
+    }
+  ],
+  "modes": ["ECB", "CBC", "CFB", "OFB"],
+  "description": "Triple Data Encryption Standard (3DES or TDES) applies the DES cipher algorithm three times to each data block. It provides better security than DES by using longer key lengths, but is slower and has been superseded by AES.",
+  "keyRequirements": {
+    "minKeySize": 112,
+    "maxKeySize": 168,
+    "keySizes": [112, 168]
+  },
+  "ivRequired": true,
+  "ivSize": 8,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "warning",
+      "message": "3DES is deprecated and will be phased out by 2023 according to NIST"
+    },
+    {
+      "level": "info",
+      "message": "3DES provides better security than DES but is slower than modern ciphers like AES"
+    },
+    {
+      "level": "warning",
+      "message": "64-bit block size makes 3DES vulnerable to birthday attacks with large amounts of data"
+    }
+  ],
+  "references": [
+    {
+      "title": "NIST SP 800-67 - Recommendation for Triple DES",
+      "url": "https://csrc.nist.gov/publications/detail/sp/800-67/rev-2/final"
+    },
+    {
+      "title": "3DES - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Triple_DES"
+    }
+  ],
+  "complexity": "medium",
+  "performance": "medium",
+  "specifications": {
+    "blockSize": 64,
+    "keySize": "112 or 168 bits",
+    "rounds": 48,
+    "structure": "Three iterations of DES",
+    "designer": "IBM",
+    "yearPublished": 1978,
+    "standardizedBy": "NIST"
+  },
+  "technicalDetails": {
+    "algorithm": "Encrypt-Decrypt-Encrypt (EDE) or Encrypt-Encrypt-Encrypt (EEE) with DES",
+    "keyArrangement": "K1-K2-K1 (2-key) or K1-K2-K3 (3-key)",
+    "security": "Effective key length of 112 bits (2-key) or 168 bits (3-key)",
+    "operation": "Three passes of DES algorithm with different keys"
+  },
+  "useCases": [
+    "Legacy financial systems",
+    "Payment card industry (being phased out)",
+    "Legacy applications requiring backward compatibility"
+  ],
+  "limitations": [
+    "Deprecated by NIST",
+    "Slower than AES due to three DES operations",
+    "64-bit block size limits security with large data volumes",
+    "Meet-in-the-middle attacks reduce effective security"
+  ]
+}

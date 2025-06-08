@@ -1,0 +1,41 @@
+{
+  "id": "rsa",
+  "name": "RSA",
+  "category": "asymmetric",
+  "variants": [
+    { "id": "rsa-1024", "name": "RSA-1024", "keySize": 128 },
+    { "id": "rsa-2048", "name": "RSA-2048", "keySize": 256 },
+    { "id": "rsa-4096", "name": "RSA-4096", "keySize": 512 }
+  ],
+  "modes": ["PKCS1", "OAEP"],
+  "description": "RSA is one of the first public-key cryptosystems and is widely used for secure data transmission. The security of RSA relies on the practical difficulty of factoring the product of two large prime numbers.",
+  "keyRequirements": {
+    "minKeySize": 128,
+    "maxKeySize": 512,
+    "keySizes": [128, 256, 512]
+  },
+  "ivRequired": false,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "warning",
+      "message": "RSA-1024 is considered weak and should not be used for new applications."
+    },
+    {
+      "level": "info",
+      "message": "RSA-2048 is currently considered secure for most applications."
+    },
+    {
+      "level": "info",
+      "message": "Use OAEP padding instead of PKCS1 v1.5 for better security."
+    }
+  ],
+  "references": [
+    {
+      "title": "RFC 8017 - PKCS #1: RSA Cryptography Specifications Version 2.2",
+      "url": "https://tools.ietf.org/html/rfc8017"
+    }
+  ],
+  "complexity": "high",
+  "performance": "slow"
+}

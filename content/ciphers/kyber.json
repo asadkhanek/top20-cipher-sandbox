@@ -1,0 +1,141 @@
+{
+  "id": "kyber",
+  "name": "Kyber",
+  "fullName": "CRYSTALS-Kyber",
+  "type": "asymmetric",
+  "category": "Post-Quantum Key Encapsulation",
+  "description": "Kyber is a post-quantum key encapsulation mechanism (KEM) based on the hardness of lattice problems. It was selected by NIST as a standard for post-quantum cryptography to resist attacks by quantum computers.",
+  "keyLengths": [768, 1024, 1536],
+  "blockSize": 32,
+  "rounds": "N/A",
+  "modes": ["KEM"],
+  "strength": "Post-Quantum",
+  "status": "NIST Standard",
+  "standardization": [
+    "NIST PQC Standard (2022)",
+    "FIPS 203 (Draft)",
+    "ISO/IEC standardization in progress"
+  ],
+  "yearIntroduced": 2017,
+  "inventors": [
+    "Roberto Avanzi",
+    "Joppe Bos", 
+    "Léo Ducas",
+    "Eike Kiltz",
+    "Tancrède Lepoint",
+    "Vadim Lyubashevsky",
+    "John M. Schanck",
+    "Peter Schwabe",
+    "Gregor Seiler",
+    "Damien Stehlé"
+  ],
+  "characteristics": {
+    "structure": "Lattice-based cryptography",
+    "hardnessProblem": "Module Learning With Errors (M-LWE)",
+    "keyGeneration": "Polynomial sampling with noise",
+    "encapsulation": "Randomized key encapsulation",
+    "parameters": "Three security levels (Kyber-512, Kyber-768, Kyber-1024)"
+  },
+  "applications": [
+    "Post-quantum secure communications",
+    "Hybrid cryptographic protocols",
+    "TLS/SSL with quantum resistance",
+    "Secure messaging systems",
+    "Future-proof key exchange"
+  ],
+  "advantages": [
+    "Quantum computer resistant",
+    "NIST standardized",
+    "Efficient implementation",
+    "Good performance characteristics",
+    "Strong security foundation",
+    "Suitable for hybrid protocols"
+  ],
+  "disadvantages": [
+    "Larger key and ciphertext sizes than classical crypto",
+    "Relatively new with limited deployment",
+    "Requires careful parameter selection",
+    "More complex implementation than classical algorithms"
+  ],
+  "security": {
+    "quantumResistance": "Designed to resist quantum attacks",
+    "classicalSecurity": "Based on well-studied lattice problems",
+    "securityLevels": {
+      "Kyber-512": "Security level 1 (equivalent to AES-128)",
+      "Kyber-768": "Security level 3 (equivalent to AES-192)", 
+      "Kyber-1024": "Security level 5 (equivalent to AES-256)"
+    },
+    "knownAttacks": [
+      "Lattice reduction attacks",
+      "Primal attacks",
+      "Dual attacks"
+    ],
+    "recommendations": "Use Kyber-768 or Kyber-1024 for high security"
+  },
+  "performance": {
+    "keyGeneration": "Fast polynomial operations",
+    "encapsulation": "Efficient matrix-vector operations", 
+    "decapsulation": "Similar to encapsulation performance",
+    "keySizes": {
+      "Kyber-512": "Public key: 800 bytes, Secret key: 1632 bytes",
+      "Kyber-768": "Public key: 1184 bytes, Secret key: 2400 bytes",
+      "Kyber-1024": "Public key: 1568 bytes, Secret key: 3168 bytes"
+    },
+    "ciphertextSize": {
+      "Kyber-512": "768 bytes",
+      "Kyber-768": "1088 bytes", 
+      "Kyber-1024": "1568 bytes"
+    }
+  },
+  "usage": {
+    "currentStatus": "NIST standardized, beginning deployment",
+    "recommendedFor": [
+      "Post-quantum secure systems",
+      "Long-term data protection",
+      "Hybrid cryptographic protocols",
+      "Government and military applications",
+      "Critical infrastructure"
+    ],
+    "notRecommendedFor": [
+      "Bandwidth-constrained environments",
+      "Legacy system integration without upgrades",
+      "Applications requiring minimal overhead"
+    ]
+  },
+  "implementation": {
+    "complexity": "High",
+    "considerations": [
+      "Constant-time implementation required",
+      "Proper random number generation",
+      "Side-channel attack protection",
+      "Parameter validation",
+      "Memory management for large keys"
+    ],
+    "libraries": [
+      "liboqs (Open Quantum Safe)",
+      "PQClean",
+      "Kyber reference implementation",
+      "Various language bindings"
+    ]
+  },
+  "related": {
+    "suite": "CRYSTALS (Cryptographic Suite for Algebraic Lattices)",
+    "companion": "CRYSTALS-Dilithium (signature scheme)",
+    "similar": ["NTRU", "SABER", "FrodoKEM"],
+    "alternatives": ["Classic McEliece", "BIKE", "HQC"],
+    "complements": ["Post-quantum signature schemes", "Hash-based signatures"]
+  },
+  "references": [
+    "NIST PQC Standardization Process",
+    "CRYSTALS-Kyber specification",
+    "FIPS 203 Draft Standard",
+    "Original Kyber paper (2017)",
+    "NIST PQC Round 3 submission"
+  ],
+  "cryptanalysis": {
+    "securityModel": "IND-CCA2 secure under M-LWE assumption",
+    "reductions": "Security reduces to worst-case lattice problems",
+    "analysisStatus": "Extensively analyzed during NIST process",
+    "confidence": "High confidence in security foundation"
+  }
+}

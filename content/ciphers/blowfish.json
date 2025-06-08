@@ -1,0 +1,90 @@
+{
+  "id": "blowfish",
+  "name": "Blowfish",
+  "category": "symmetric",
+  "variants": [
+    {
+      "id": "blowfish-64",
+      "name": "Blowfish-64",
+      "keySize": 64
+    },
+    {
+      "id": "blowfish-128",
+      "name": "Blowfish-128",
+      "keySize": 128
+    },
+    {
+      "id": "blowfish-256",
+      "name": "Blowfish-256",
+      "keySize": 256
+    },
+    {
+      "id": "blowfish-448",
+      "name": "Blowfish-448",
+      "keySize": 448
+    }
+  ],
+  "modes": ["ECB", "CBC", "CFB", "OFB"],
+  "description": "Blowfish is a symmetric-key block cipher designed by Bruce Schneier in 1993. It is notable for its fast encryption speed and variable key length from 32 to 448 bits, making it suitable for applications where key changes are infrequent.",
+  "keyRequirements": {
+    "minKeySize": 32,
+    "maxKeySize": 448,
+    "keySizes": [64, 128, 256, 448]
+  },
+  "ivRequired": true,
+  "ivSize": 8,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "warning",
+      "message": "Blowfish has a 64-bit block size which may be vulnerable to birthday attacks with large amounts of data"
+    },
+    {
+      "level": "info",
+      "message": "Blowfish is suitable for applications where key changes are infrequent due to expensive key setup"
+    },
+    {
+      "level": "info",
+      "message": "No effective cryptanalysis of Blowfish has been found to date"
+    }
+  ],
+  "references": [
+    {
+      "title": "Blowfish Encryption Algorithm - Bruce Schneier",
+      "url": "https://www.schneier.com/academic/blowfish/"
+    },
+    {
+      "title": "Blowfish - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Blowfish_(cipher)"
+    }
+  ],
+  "complexity": "medium",
+  "performance": "fast",
+  "specifications": {
+    "blockSize": 64,
+    "keySize": "32-448 bits (variable)",
+    "rounds": 16,
+    "structure": "Feistel network",
+    "designer": "Bruce Schneier",
+    "yearPublished": 1993,
+    "patentStatus": "Unpatented and royalty-free"
+  },
+  "technicalDetails": {
+    "algorithm": "Feistel network with 16 rounds",
+    "keySchedule": "Key-dependent S-boxes and subkeys derived from the key",
+    "sBoxes": "Four 8×32-bit S-boxes",
+    "subkeys": "18 32-bit subkeys derived from the original key"
+  },
+  "useCases": [
+    "Applications requiring fast encryption with infrequent key changes",
+    "Embedded systems with limited computational resources",
+    "File encryption utilities",
+    "VPN implementations"
+  ],
+  "limitations": [
+    "64-bit block size limits security with large data volumes",
+    "Key setup is computationally expensive",
+    "Not suitable for applications requiring frequent key changes",
+    "Superseded by newer algorithms like AES for most applications"
+  ]
+}

@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+test-results/
+playwright-report/
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+
+# Next.js build output
+.next
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local test files (exclude debug/test scripts)
+debug-*.js
+test-*.js
+test-*.mjs
+basic-cipher-test.js
+final-cipher-test.js
+final-comprehensive-test.js
+fix-engines.js
+test-all-*.js
+test-cipher-engines*.js
+test-cipher-engines*.ts
+test-custom-engines.js
+test-engine-implementations.js
+test-fixed-engines.js
+test-package.json

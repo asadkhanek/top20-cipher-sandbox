@@ -1,0 +1,96 @@
+{
+  "id": "tea",
+  "name": "TEA",
+  "category": "symmetric",
+  "type": "block",
+  "keySize": "128-bit",
+  "blockSize": "64-bit",
+  "rounds": 32,
+  "designer": "David Wheeler, Roger Needham",
+  "publishedYear": 1994,
+  "standardization": "None",
+  "description": "Tiny Encryption Algorithm (TEA) is a simple block cipher designed for ease of implementation. It uses a Feistel structure with very simple operations but has known security weaknesses.",
+  "history": "TEA was designed by David Wheeler and Roger Needham at Cambridge University in 1994. It was designed to be simple to implement and understand, but several security flaws have been discovered over time.",
+  "features": [
+    "Very simple design",
+    "32 rounds",
+    "128-bit key",
+    "64-bit block size",
+    "Feistel structure",
+    "Easy to implement"
+  ],
+  "advantages": [
+    "Extremely simple to implement",
+    "Small code size",
+    "Fast execution",
+    "Educational value",
+    "No complex operations required"
+  ],
+  "disadvantages": [
+    "Known cryptographic weaknesses",
+    "Vulnerable to related-key attacks",
+    "64-bit block size (birthday attacks)",
+    "Not recommended for production use",
+    "Weak key schedule"
+  ],
+  "securityLevel": "Low",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Related-key attacks",
+      "Weak key classes",
+      "Birthday attacks (64-bit blocks)",
+      "Differential cryptanalysis on reduced rounds"
+    ],
+    "bestAttack": "Related-key attacks can break TEA",
+    "securityMargin": "Low - has known practical weaknesses"
+  },
+  "useCases": [
+    "Educational purposes",
+    "Historical study",
+    "Proof of concept",
+    "Non-critical applications",
+    "Algorithm research"
+  ],
+  "variants": [
+    {
+      "name": "TEA",
+      "keySize": 128,
+      "description": "Original TEA algorithm"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECB",
+      "description": "Electronic Codebook - simplest but least secure",
+      "ivRequired": false
+    },
+    {
+      "name": "CBC",
+      "description": "Cipher Block Chaining - more secure than ECB",
+      "ivRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "Very Low",
+    "performance": "Fast",
+    "memoryRequirement": "Very Low",
+    "hardwareEfficiency": "High"
+  },
+  "standards": [
+    "Not standardized",
+    "Academic cipher only"
+  ],
+  "references": [
+    {
+      "title": "TEA, a Tiny Encryption Algorithm",
+      "authors": "David Wheeler, Roger Needham",
+      "year": 1994,
+      "note": "Cambridge University Computer Laboratory"
+    },
+    {
+      "title": "Related-key cryptanalysis of 3-WAY, Biham-DES, CAST, DES-X, NewDES, RC2, and TEA",
+      "authors": "John Kelsey, Bruce Schneier, David Wagner",
+      "conference": "ICICS 1997"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "cast128",
+  "name": "CAST-128",
+  "category": "symmetric",
+  "type": "block",
+  "keySize": "40-128 bit (variable)",
+  "blockSize": "64-bit",
+  "rounds": 16,
+  "designer": "Carlisle Adams, Stafford Tavares",
+  "publishedYear": 1996,
+  "standardization": "RFC 2144",
+  "description": "CAST-128 (also known as CAST5) is a symmetric key block cipher with a Feistel structure. It's the default cipher in OpenPGP and supports variable key lengths from 40 to 128 bits.",
+  "history": "CAST-128 was developed by Carlisle Adams and Stafford Tavares in 1996. It became widely known as the default encryption algorithm in OpenPGP (Pretty Good Privacy) software.",
+  "features": [
+    "Variable key length (40-128 bits)",
+    "64-bit block size",
+    "16 rounds",
+    "Feistel network structure",
+    "Complex key schedule"
+  ],
+  "advantages": [
+    "Variable key length provides flexibility",
+    "Well-analyzed and trusted",
+    "Standard cipher in OpenPGP",
+    "Good performance",
+    "Simple implementation"
+  ],
+  "disadvantages": [
+    "64-bit block size vulnerable to birthday attacks",
+    "Not suitable for encrypting large amounts of data",
+    "Superseded by newer 128-bit block ciphers",
+    "Limited modern use outside OpenPGP"
+  ],
+  "securityLevel": "Medium",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Related-key attacks (theoretical)",
+      "Differential cryptanalysis (reduced rounds)",
+      "Linear cryptanalysis (reduced rounds)",
+      "Birthday attacks due to 64-bit block size"
+    ],
+    "bestAttack": "No practical attacks on full 16-round CAST-128",
+    "securityMargin": "Moderate - limited by 64-bit block size"
+  },
+  "useCases": [
+    "OpenPGP encryption",
+    "Legacy system compatibility",
+    "Email encryption",
+    "Small data encryption",
+    "Educational purposes"
+  ],
+  "variants": [
+    {
+      "name": "CAST-128",
+      "keySize": "40-128",
+      "description": "Standard CAST-128 with variable key length"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECB",
+      "description": "Electronic Codebook - simplest but least secure",
+      "ivRequired": false
+    },
+    {
+      "name": "CBC",
+      "description": "Cipher Block Chaining - most common secure mode",
+      "ivRequired": true
+    },
+    {
+      "name": "CFB",
+      "description": "Cipher Feedback - stream cipher mode",
+      "ivRequired": true
+    },
+    {
+      "name": "OFB",
+      "description": "Output Feedback - synchronous stream cipher",
+      "ivRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "Medium",
+    "performance": "Good",
+    "memoryRequirement": "Low",
+    "hardwareEfficiency": "Moderate"
+  },
+  "standards": [
+    "RFC 2144",
+    "OpenPGP (RFC 4880)",
+    "Canadian CRYPTREC"
+  ],
+  "references": [
+    {
+      "title": "RFC 2144: The CAST-128 Encryption Algorithm",
+      "authors": "C. Adams",
+      "url": "https://tools.ietf.org/rfc/rfc2144.txt"
+    },
+    {
+      "title": "The CAST Encryption Algorithm",
+      "authors": "Carlisle Adams, Stafford Tavares",
+      "conference": "Fast Software Encryption 1996"
+    }
+  ]
+}

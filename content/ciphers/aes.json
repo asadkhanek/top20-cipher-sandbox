@@ -1,0 +1,42 @@
+{
+  "id": "aes",
+  "name": "Advanced Encryption Standard (AES)",
+  "category": "symmetric",
+  "variants": [
+    { "id": "aes-128", "name": "AES-128", "keySize": 16 },
+    { "id": "aes-192", "name": "AES-192", "keySize": 24 },
+    { "id": "aes-256", "name": "AES-256", "keySize": 32 }
+  ],
+  "modes": ["ECB", "CBC", "CTR", "GCM"],
+  "description": "The Advanced Encryption Standard (AES) is a symmetric block cipher chosen by the U.S. government to protect classified information. AES is implemented in software and hardware throughout the world to encrypt sensitive data.",
+  "keyRequirements": {
+    "minKeySize": 16,
+    "maxKeySize": 32,
+    "keySizes": [16, 24, 32]
+  },
+  "ivRequired": true,
+  "ivSize": 16,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "info",
+      "message": "AES is considered secure when used with proper modes like GCM or CBC with authentication."
+    },
+    {
+      "level": "warning",
+      "message": "ECB mode should be avoided for most applications as it does not hide data patterns."
+    }
+  ],
+  "references": [
+    {
+      "title": "FIPS 197 - Advanced Encryption Standard (AES)",
+      "url": "https://csrc.nist.gov/publications/detail/fips/197/final"
+    },
+    {
+      "title": "RFC 3565 - Use of the Advanced Encryption Standard (AES) Encryption Algorithm in Cryptographic Message Syntax (CMS)",
+      "url": "https://tools.ietf.org/html/rfc3565"
+    }
+  ],
+  "complexity": "low",
+  "performance": "fast"
+}

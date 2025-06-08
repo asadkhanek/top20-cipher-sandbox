@@ -1,0 +1,121 @@
+{
+  "id": "camellia",
+  "name": "Camellia",
+  "category": "symmetric",
+  "type": "block",
+  "keySize": "128/192/256-bit",
+  "blockSize": "128-bit",
+  "rounds": "18/24 rounds",
+  "designer": "Mitsubishi Electric, NTT",
+  "publishedYear": 2000,
+  "standardization": "ISO/IEC 18033-3, RFC 3713, IETF RFC 4132",
+  "description": "Camellia is a symmetric key block cipher with a Feistel structure. Jointly developed by Mitsubishi Electric and NTT of Japan, it offers security and performance comparable to AES.",
+  "history": "Camellia was developed in 2000 by Mitsubishi Electric and NTT. It was designed to be a secure alternative to AES with similar performance characteristics and has been widely adopted in Japan.",
+  "features": [
+    "Feistel network structure",
+    "Variable key length (128, 192, 256 bits)",
+    "128-bit block size",
+    "International standardization",
+    "Hardware and software efficient"
+  ],
+  "advantages": [
+    "Security equivalent to AES",
+    "Efficient in both hardware and software",
+    "International standard (ISO/IEC 18033-3)",
+    "Strong against known cryptanalytic attacks",
+    "Suitable for constrained environments"
+  ],
+  "disadvantages": [
+    "Less widely adopted than AES globally",
+    "Larger key schedule than AES",
+    "More complex structure than AES"
+  ],
+  "securityLevel": "Very High",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Impossible differential cryptanalysis (reduced rounds)",
+      "Integral cryptanalysis (reduced rounds)",
+      "Square attack (reduced rounds)"
+    ],
+    "bestAttack": "No practical attacks on full Camellia",
+    "securityMargin": "High - comparable to AES"
+  },
+  "useCases": [
+    "Japanese government systems",
+    "Financial transactions",
+    "Secure communications",
+    "Embedded systems",
+    "IoT devices"
+  ],
+  "variants": [
+    {
+      "name": "Camellia-128",
+      "keySize": 128,
+      "rounds": 18,
+      "description": "128-bit key, 18 rounds"
+    },
+    {
+      "name": "Camellia-192",
+      "keySize": 192,
+      "rounds": 24,
+      "description": "192-bit key, 24 rounds"
+    },
+    {
+      "name": "Camellia-256",
+      "keySize": 256,
+      "rounds": 24,
+      "description": "256-bit key, 24 rounds"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECB",
+      "description": "Electronic Codebook - simplest but least secure",
+      "ivRequired": false
+    },
+    {
+      "name": "CBC",
+      "description": "Cipher Block Chaining - most common secure mode",
+      "ivRequired": true
+    },
+    {
+      "name": "CFB",
+      "description": "Cipher Feedback - stream cipher mode",
+      "ivRequired": true
+    },
+    {
+      "name": "OFB",
+      "description": "Output Feedback - synchronous stream cipher",
+      "ivRequired": true
+    },
+    {
+      "name": "CTR",
+      "description": "Counter mode - parallelizable stream cipher",
+      "ivRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "Medium",
+    "performance": "Good",
+    "memoryRequirement": "Moderate",
+    "hardwareEfficiency": "High"
+  },
+  "standards": [
+    "ISO/IEC 18033-3",
+    "IETF RFC 3713",
+    "IETF RFC 4132",
+    "CRYPTREC (Japan)",
+    "NESSIE Portfolio"
+  ],
+  "references": [
+    {
+      "title": "Camellia: A 128-Bit Block Cipher Suitable for Multiple Platforms",
+      "authors": "Kazumaro Aoki et al.",
+      "url": "https://info.isl.ntt.co.jp/crypt/camellia/"
+    },
+    {
+      "title": "RFC 3713: A Description of the Camellia Encryption Algorithm",
+      "url": "https://tools.ietf.org/rfc/rfc3713.txt"
+    }
+  ]
+}

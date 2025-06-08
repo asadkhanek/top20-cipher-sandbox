@@ -1,0 +1,113 @@
+{
+  "id": "serpent",
+  "name": "Serpent",
+  "category": "symmetric",
+  "type": "block",
+  "keySize": "128/192/256-bit",
+  "blockSize": "128-bit",
+  "rounds": 32,
+  "designer": "Ross Anderson, Eli Biham, Lars Knudsen",
+  "publishedYear": 1998,
+  "standardization": "AES Finalist",
+  "description": "Serpent is a symmetric key block cipher that was one of the five finalists in the Advanced Encryption Standard (AES) contest. It was designed with a conservative approach, prioritizing security over speed.",
+  "history": "Serpent was designed by Ross Anderson, Eli Biham, and Lars Knudsen in 1998 as a candidate for the AES. Although Rijndael (now AES) was selected, Serpent was noted for having the highest security margin among the finalists.",
+  "features": [
+    "32 rounds (highest among AES finalists)",
+    "Conservative security design",
+    "Variable key length (128, 192, 256 bits)",
+    "128-bit block size",
+    "High security margin"
+  ],
+  "advantages": [
+    "Highest security margin among AES finalists",
+    "Very secure against known attacks",
+    "Simple and elegant design",
+    "Resistant to timing attacks"
+  ],
+  "disadvantages": [
+    "Slower than AES",
+    "More rounds require more processing",
+    "Less widely adopted than AES"
+  ],
+  "securityLevel": "Very High",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Differential cryptanalysis (reduced rounds)",
+      "Linear cryptanalysis (reduced rounds)"
+    ],
+    "bestAttack": "No practical attacks on full 32-round Serpent",
+    "securityMargin": "Very high - designed with conservative approach"
+  },
+  "useCases": [
+    "High-security applications",
+    "Government communications",
+    "Academic research",
+    "Paranoid encryption scenarios"
+  ],
+  "variants": [
+    {
+      "name": "Serpent-128",
+      "keySize": 128,
+      "description": "128-bit key variant"
+    },
+    {
+      "name": "Serpent-192", 
+      "keySize": 192,
+      "description": "192-bit key variant"
+    },
+    {
+      "name": "Serpent-256",
+      "keySize": 256,
+      "description": "256-bit key variant (most secure)"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECB",
+      "description": "Electronic Codebook - simplest but least secure",
+      "ivRequired": false
+    },
+    {
+      "name": "CBC",
+      "description": "Cipher Block Chaining - most common secure mode",
+      "ivRequired": true
+    },
+    {
+      "name": "CFB",
+      "description": "Cipher Feedback - stream cipher mode",
+      "ivRequired": true
+    },
+    {
+      "name": "OFB",
+      "description": "Output Feedback - synchronous stream cipher",
+      "ivRequired": true
+    },
+    {
+      "name": "CTR",
+      "description": "Counter mode - parallelizable stream cipher",
+      "ivRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "High",
+    "performance": "Slow",
+    "memoryRequirement": "Moderate",
+    "hardwareEfficiency": "Moderate"
+  },
+  "standards": [
+    "Evaluated in NIST AES competition",
+    "ISO/IEC 18033-3 (Block ciphers)"
+  ],
+  "references": [
+    {
+      "title": "Serpent: A Candidate Block Cipher for the AES",
+      "authors": "Ross Anderson, Eli Biham, Lars Knudsen",
+      "url": "https://www.cl.cam.ac.uk/~rja14/serpent.html"
+    },
+    {
+      "title": "The Block Cipher Serpent",
+      "conference": "Fast Software Encryption 1998",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-69710-1_14"
+    }
+  ]
+}

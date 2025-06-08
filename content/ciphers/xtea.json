@@ -1,0 +1,93 @@
+{
+  "id": "xtea",
+  "name": "XTEA",
+  "category": "symmetric",
+  "type": "block",
+  "keySize": "128-bit",
+  "blockSize": "64-bit", 
+  "rounds": 32,
+  "designer": "David Wheeler, Roger Needham",
+  "publishedYear": 1997,
+  "standardization": "None",
+  "description": "Extended Tiny Encryption Algorithm (XTEA) is a block cipher designed to correct weaknesses in TEA. It uses a more complex key schedule and is more resistant to related-key attacks.",
+  "history": "XTEA was designed by David Wheeler and Roger Needham in 1997 as an improvement over their original TEA algorithm. It addresses several security weaknesses found in TEA while maintaining simplicity.",
+  "features": [
+    "Improved key schedule over TEA",
+    "32 rounds",
+    "128-bit key",
+    "64-bit block size",
+    "Feistel structure",
+    "More secure than original TEA"
+  ],
+  "advantages": [
+    "Simple to implement",
+    "Fixes TEA's known weaknesses",
+    "Fast execution",
+    "Low memory requirements",
+    "Good for embedded systems"
+  ],
+  "disadvantages": [
+    "64-bit block size (birthday attacks)",
+    "Still relatively simple design",
+    "Not as thoroughly analyzed as modern ciphers",
+    "Not standardized"
+  ],
+  "securityLevel": "Medium",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Birthday attacks due to 64-bit blocks",
+      "Some theoretical attacks on reduced rounds",
+      "Differential cryptanalysis (reduced rounds)"
+    ],
+    "bestAttack": "No practical attacks on full XTEA",
+    "securityMargin": "Moderate - much improved over TEA"
+  },
+  "useCases": [
+    "Embedded systems",
+    "Resource-constrained environments",
+    "Educational purposes",
+    "Legacy system compatibility",
+    "Small data encryption"
+  ],
+  "variants": [
+    {
+      "name": "XTEA",
+      "keySize": 128,
+      "description": "Standard XTEA algorithm"
+    }
+  ],
+  "modes": [
+    {
+      "name": "ECB",
+      "description": "Electronic Codebook - simplest but least secure",
+      "ivRequired": false
+    },
+    {
+      "name": "CBC",
+      "description": "Cipher Block Chaining - more secure than ECB",
+      "ivRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "Low",
+    "performance": "Fast",
+    "memoryRequirement": "Very Low",
+    "hardwareEfficiency": "High"
+  },
+  "standards": [
+    "Not standardized",
+    "Academic cipher"
+  ],
+  "references": [
+    {
+      "title": "Correction to XTEA",
+      "authors": "David Wheeler, Roger Needham",
+      "year": 1997,
+      "note": "Cambridge University Computer Laboratory"
+    },
+    {
+      "title": "Extended Tiny Encryption Algorithm",
+      "url": "https://en.wikipedia.org/wiki/XTEA"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "des",
+  "name": "DES",
+  "category": "symmetric",
+  "variants": [
+    {
+      "id": "des-56",
+      "name": "DES-56",
+      "keySize": 56
+    }
+  ],
+  "modes": ["ECB", "CBC", "CFB", "OFB"],
+  "description": "Data Encryption Standard (DES) is a symmetric-key algorithm for the encryption of digital data. Although now considered insecure due to its small key size, DES was widely adopted and has historical significance in cryptography.",
+  "keyRequirements": {
+    "minKeySize": 56,
+    "maxKeySize": 56,
+    "keySizes": [56]
+  },
+  "ivRequired": true,
+  "ivSize": 8,
+  "nonceRequired": false,
+  "securityNotes": [
+    {
+      "level": "danger",
+      "message": "DES is cryptographically broken and should not be used for secure applications"
+    },
+    {
+      "level": "warning",
+      "message": "DES has a 56-bit key size which is vulnerable to brute force attacks"
+    },
+    {
+      "level": "info",
+      "message": "DES was broken in 1999 when a dedicated machine could crack it in 22 hours"
+    }
+  ],
+  "references": [
+    {
+      "title": "FIPS 46-3 - Data Encryption Standard",
+      "url": "https://csrc.nist.gov/publications/detail/fips/46/3/final"
+    },
+    {
+      "title": "DES - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Data_Encryption_Standard"
+    }
+  ],
+  "complexity": "low",
+  "performance": "fast",
+  "specifications": {
+    "blockSize": 64,
+    "keySize": 56,
+    "rounds": 16,
+    "structure": "Feistel network",
+    "designer": "IBM",
+    "yearPublished": 1977,
+    "standardizedBy": "NIST"
+  },
+  "technicalDetails": {
+    "algorithm": "Symmetric block cipher using Feistel network structure",
+    "keySchedule": "56-bit key expanded to 16 round keys of 48 bits each",
+    "sBoxes": "8 substitution boxes (S-boxes) for confusion",
+    "permutation": "Fixed permutation tables for diffusion"
+  },
+  "useCases": [
+    "Historical cryptographic systems",
+    "Educational purposes",
+    "Legacy system compatibility (not recommended)"
+  ],
+  "limitations": [
+    "56-bit key size is too small for modern security requirements",
+    "Vulnerable to brute force attacks",
+    "64-bit block size vulnerable to birthday attacks",
+    "Not suitable for encrypting large amounts of data"
+  ]
+}

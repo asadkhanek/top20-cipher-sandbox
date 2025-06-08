@@ -1,0 +1,99 @@
+{
+  "id": "salsa20",
+  "name": "Salsa20",
+  "category": "symmetric",
+  "type": "stream",
+  "keySize": "128/256-bit",
+  "blockSize": "N/A (stream cipher)",
+  "rounds": "8/12/20 rounds",
+  "designer": "Daniel J. Bernstein",
+  "publishedYear": 2005,
+  "standardization": "eSTREAM Portfolio",
+  "description": "Salsa20 is a stream cipher built on a pseudorandom function based on add-rotate-xor (ARX) operations. It's designed for high speed in software implementations while maintaining strong security.",
+  "history": "Salsa20 was designed by Daniel J. Bernstein and submitted to the eSTREAM project in 2005. It was selected for the eSTREAM portfolio for software-oriented stream ciphers and has influenced many subsequent cipher designs.",
+  "features": [
+    "Stream cipher design",
+    "ARX operations (Add, Rotate, XOR)",
+    "Variable rounds (8, 12, 20)",
+    "64-byte keystream blocks",
+    "8-byte nonce",
+    "Very fast in software"
+  ],
+  "advantages": [
+    "Extremely fast on modern CPUs",
+    "Simple and elegant design",
+    "Strong security analysis",
+    "No timing attack vulnerabilities",
+    "Constant-time implementation possible"
+  ],
+  "disadvantages": [
+    "Relatively new compared to established ciphers",
+    "Limited hardware implementations",
+    "Nonce reuse is catastrophic",
+    "Less standardized than AES"
+  ],
+  "securityLevel": "Very High",
+  "cryptanalysis": {
+    "knownAttacks": [
+      "Differential cryptanalysis on reduced rounds",
+      "Related-key attacks (theoretical)",
+      "Some distinguishing attacks on reduced rounds"
+    ],
+    "bestAttack": "No practical attacks on Salsa20/20",
+    "securityMargin": "Very high - designed with conservative approach"
+  },
+  "useCases": [
+    "High-speed encryption",
+    "Secure communications",
+    "VPN implementations",
+    "Real-time encryption",
+    "Embedded systems"
+  ],
+  "variants": [
+    {
+      "name": "Salsa20/8",
+      "rounds": 8,
+      "description": "Reduced round version for extreme speed"
+    },
+    {
+      "name": "Salsa20/12",
+      "rounds": 12,
+      "description": "Balanced version with good speed/security"
+    },
+    {
+      "name": "Salsa20/20",
+      "rounds": 20,
+      "description": "Full security version (recommended)"
+    }
+  ],
+  "modes": [
+    {
+      "name": "Stream",
+      "description": "Native stream cipher mode - XOR with keystream",
+      "ivRequired": false,
+      "nonceRequired": true
+    }
+  ],
+  "implementation": {
+    "complexity": "Medium",
+    "performance": "Very Fast",
+    "memoryRequirement": "Low",
+    "hardwareEfficiency": "Moderate"
+  },
+  "standards": [
+    "eSTREAM Portfolio (Profile 1)",
+    "Used in NaCl/libsodium"
+  ],
+  "references": [
+    {
+      "title": "The Salsa20 family of stream ciphers",
+      "authors": "Daniel J. Bernstein",
+      "url": "https://cr.yp.to/snuffle.html"
+    },
+    {
+      "title": "Salsa20 specification",
+      "authors": "Daniel J. Bernstein",
+      "url": "https://cr.yp.to/snuffle/spec.pdf"
+    }
+  ]
+}
